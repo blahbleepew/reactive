@@ -55,7 +55,7 @@ export function useReactives<T extends any[]>(stateObjects: T, deps?: React.Depe
     }
     return () => {
       mounted.current = false;
-      observer.current.removeObservers();
+      observer.current?.removeObservers();
       observer.current = null;
     };
   }, []);
